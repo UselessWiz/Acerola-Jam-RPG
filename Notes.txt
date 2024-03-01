@@ -1,0 +1,22 @@
+Phases for this game: 
+	- school day - start at the front gates of a school, send them to a room somewhere - 3 floors simple floor transition i dont want complex shit
+	- bell rings, give them a chance to explore the school. a door appears somewhere within the school, somewhere obvious that will be like "that wasnt here before"
+	- walk through the door, it closes and locks, dialogue appears saying it remains closed until 11:55pm. the player is in a long hallway with a black background, hallway slowly shifts from wooden floor tiles to like cobblestone or something. hallway shifts from normal hallway to mess of tiles covering the screen until the cobblestone section
+	- eventually reach a castle (RPG maker tiles lmao im not joking), meet a school student (but slightly transparent to indicate its not quite right) on the roof of castle who says keep walking. players hair colour starts shifting weirdly (shes got the razer keyboard hair lmao)
+	- On grass, steal lsd walking sound, shift camera up and down for fun until a big ass hole (edge of the world) which the player will inevitably walk off of in a similar vein to lsd again lmao (i love blatent theft). 
+ 	- fade to black, fade into a room with same wooden floors as the school, swirly background, student is speaking a weird language, dialogue is weird language, music is the same as the school but with the myhouse.wad music treatment (notes out by a semitone, notes dropped, instruments dropped, etc. wait for a bit first let it be normal)
+	- go through the maze, layout starts very similarly to the school but changes, all of the rooms are empty space and cant be accessed, except for a new room where the dream door appeared all that time ago which has an abarrition walking around in a more hand drawn style than the rest of the game (as best i can given restrictions). 
+	- creature moves around the room, as the player comes in contact with it the camera starts to fade, needs to stay touching it.
+	- fade back in, the hallway from the start and the room from the end are layed on top of each other visually, clock now says 11:55pm and the door is open. exit room cut to black, end of game.
+	- if the player does not get to the end of the game before midnight, they get a bad ending, where the entire world is engulfed in blackness and all they can do is wander in said darkness until they interact and realise they failed.
+
+Elements that need to be completed 
+	- steal a bunch of relevant tiles and combine them into the one mega floor tilesheet with all the stuff i'll need. i actually dont need all that much suprisingly because a lot of the game is based around the school tiles
+	- player movement + animation controls (get movement angle from direction vector and choose appropriately from there. + specific interaction stuff
+	- walls that fade in and out when the player walks behind them - follow a tutorial for that one
+	- art - player model. then take that and modify it for students. - abberition - doodle something really doesnt matter what just as long as it looks out of place.
+	- clock - top left corner, counts up by 5 mins every 10/20 seconds (probably 20 but idk yet).
+	- dialogue system - container done, npcs just need to get lines from that. theres not gonna be much so its not that big of a deal.
+	- make the map - maybe spread over a few scenes? school to castle should all be one, then after the fall might work better seperated to keep things clean and to make the music switch better.
+	- music. its not like it needs anything crazy tbh, it just needs enough to give it slight persona 5 vibes through the school section, slightly medievil or lsd esque through the castle section, slightly empty plus weird sounding through school section 2. - 3 tracks MAX
+	- VERY SIMPLE main menu. should not be anything crazy, just needs to be reasonable looking enough to make the game look slightly better than it is.
