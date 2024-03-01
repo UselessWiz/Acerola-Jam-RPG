@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Student : MonoBehaviour
 {
-    [SerializeField] private bool dialogueSaid = false;
+    [SerializeField] private DialogueContainer dialogueContainer;
+    [SerializeField] private bool random;
+    
+    //[SerializeField] private bool dialogueSaid = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,9 +15,9 @@ public class Student : MonoBehaviour
     }
 
     // Update is called once per frame
-    public string GetDialogue(bool random)
+    public string GetDialogue()
     {
-        //if (dialogueSaid) 
+        gameObject.GetComponent<Collider2D>().enabled = false; 
 
         if (random) {
             return dialogueContainer.SelectRandomDialogue();
@@ -22,7 +25,5 @@ public class Student : MonoBehaviour
         else {
             return dialogueContainer.NextSequentialDialogue();
         }
-
-        gameObject.GetComponent<Collider2D>.enabled = false;
     }
 }
