@@ -13,10 +13,10 @@ Phases for this game:
 Elements that need to be completed 
 	- steal a bunch of relevant tiles and combine them into the one mega floor tilesheet with all the stuff i'll need. i actually dont need all that much suprisingly because a lot of the game is based around the school tiles
 	- player movement + animation controls (get movement angle from direction vector and choose appropriately from there. + specific interaction stuff
-	- walls that fade in and out when the player walks behind them - follow a tutorial for that one
+	- [LOW PRIO] walls that fade in and out when the player walks behind them - follow a tutorial for that one
 	- art - player model. then take that and modify it for students. - abberition - doodle something really doesnt matter what just as long as it looks out of place.
-	- clock - top left corner, counts up by 5 mins every 10/20 seconds (probably 20 but idk yet).
-	- dialogue system - container done, npcs just need to get lines from that. theres not gonna be much so its not that big of a deal.
+	- [DONE] clock - top left corner, counts up by 5 mins every 10/20 seconds (probably 20 but idk yet).
+	- [DONE] dialogue system - container done, npcs just need to get lines from that. theres not gonna be much so its not that big of a deal.
 	- make the map - maybe spread over a few scenes? school to castle should all be one, then after the fall might work better seperated to keep things clean and to make the music switch better.
 	- music. its not like it needs anything crazy tbh, it just needs enough to give it slight persona 5 vibes through the school section, slightly medievil or lsd esque through the castle section, slightly empty plus weird sounding through school section 2. - 3 tracks MAX
 	- VERY SIMPLE main menu. should not be anything crazy, just needs to be reasonable looking enough to make the game look slightly better than it is.

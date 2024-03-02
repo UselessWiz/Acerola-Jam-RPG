@@ -37,7 +37,6 @@ public class MovementController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Student") {
-            Debug.Log("THIS");
             StartCoroutine(dialogueBox.GetComponent<DialogueBox>().Display(other.GetComponent<Student>().GetDialogue(), 5f));
         }
     }

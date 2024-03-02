@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Student1
   m_EditorClassIdentifier: 
   dialogueLines:
-  - Shit, I forgot about the quiz today.
+  - Damn, I forgot about the quiz today.
   currentDialogueIndex: 0
   relevantNPC: {fileID: 0}

@@ -12,7 +12,7 @@ public class Clock : MonoBehaviour
 
     void Start()
     {
-        clockData.SetClock(9, 0);
+        clockData.SetClock(8, 55);
         InvokeRepeating("UpdateTime", 0.0f, 2.0f);
     }
 
