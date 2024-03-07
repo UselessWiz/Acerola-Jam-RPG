@@ -11,6 +11,7 @@ public class Teleporter : MonoBehaviour
     {
         if (other.transform.gameObject == player) {
             player.transform.position = otherTP.transform.position + new Vector3(0, -2, 0);
+            player.GetComponent<MovementController>().Stop(0.5f);
         }
     }
 }
