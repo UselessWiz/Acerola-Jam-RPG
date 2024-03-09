@@ -11,8 +11,9 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Canvas canvas;
 
-    public IEnumerator Display(string text, float delay, Vector2 location = new Vector2(), float timeBetweenLetters = 0.2f)
+    public IEnumerator Display(string text, float delay, Vector2 location = new Vector2(), float timeBetweenLetters = 0.05f)
     {
+        Debug.Log("display workd");
         playerScript.dialogueFinished = false;
 
         if (location == default(Vector2)) {
