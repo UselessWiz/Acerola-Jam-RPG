@@ -9763,6 +9763,9 @@ MonoBehaviour:
   oldAngle: 0
   stopped: 0
   stoppedFinished: 0
+  dialogueFinished: 0
+  queuedDialogue: []
+  currentStudent: {fileID: 0}
   dialogueBox: {fileID: 2037154455}
   saveData: {fileID: 11400000, guid: 61080fa36ac039e4ab4e5a8196f4eb3a, type: 2}
   direction: {x: 0, y: 0}
@@ -10039,9 +10042,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91ad4076972c074f843c619fdd44eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 482667720}
-  verticalVelocity: 0
-  gravity: -10
+  player: {fileID: 482667717}
+  lerpValue: 0
+  sign: 1
 --- !u!1 &608827567
 GameObject:
   m_ObjectHideFlags: 0
@@ -10215,6 +10218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueContainer: {fileID: 11400000, guid: b34e4275161df908fad6dde2bc044da3, type: 2}
   random: 1
+  delay: 2
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -14490,7 +14494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5:00
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15283,6 +15287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877e908d0a4d7424a91418e5fcf39a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
   backgroundImage: {fileID: 2037154457}
   dialogueText: {fileID: 1565266527}
   canvas: {fileID: 1522471446}

@@ -6,6 +6,8 @@ public class Student : MonoBehaviour
 {
     [SerializeField] private DialogueContainer dialogueContainer;
     [SerializeField] private bool random;
+
+    public float delay = 2f;
     
     //[SerializeField] private bool dialogueSaid = false;
     // Start is called before the first frame update

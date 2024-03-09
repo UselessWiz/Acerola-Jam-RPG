@@ -6,12 +6,15 @@ using TMPro;
 
 public class DialogueBox : MonoBehaviour
 {
+    [SerializeField] private MovementController playerScript;
     [SerializeField] private Image backgroundImage;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Canvas canvas;
 
-    public IEnumerator Display(string text, float delay, Vector2 location = new Vector2())
+    public IEnumerator Display(string text, float delay, Vector2 location = new Vector2(), float timeBetweenLetters = 0.2f)
     {
+        playerScript.dialogueFinished = false;
+
         if (location == default(Vector2)) {
             transform.position = new Vector2(100, 50);
         }
@@ -22,11 +25,16 @@ public class DialogueBox : MonoBehaviour
         transform.position = transform.position + canvas.transform.position;
 
         backgroundImage.enabled = true;
-        dialogueText.text = text;
+
+        for (int i = 0; i < text.Length; i++) {
+            dialogueText.text = dialogueText.text + text[i];
+            yield return new WaitForSeconds(timeBetweenLetters);
+        }
 
         yield return new WaitForSeconds(delay);
 
         backgroundImage.enabled = false;
         dialogueText.text = "";
+        playerScript.dialogueFinished = true;
     }
 }

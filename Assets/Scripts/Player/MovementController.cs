@@ -10,6 +10,10 @@ public class MovementController : MonoBehaviour
     [SerializeField] private bool stopped = false;
     [SerializeField] private float stoppedFinished;
 
+    public bool dialogueFinished;
+    [SerializeField] private List<Student> queuedDialogue;
+    [SerializeField] private Student currentStudent;
+
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private SaveData saveData;
 
@@ -25,6 +29,7 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Movement
         float angle = 0;
 
         if (stopped) {
@@ -39,7 +44,6 @@ public class MovementController : MonoBehaviour
             angle = oldAngle;
         }
         else {
-            // Move
             transform.Translate(Vector2.ClampMagnitude(direction, 1f) * speed * Time.deltaTime);
 
             direction = direction.normalized;
@@ -52,12 +56,24 @@ public class MovementController : MonoBehaviour
                 if (angle < 0) angle += 360;
             }
         }
+
+        // Dialogue
+        if (queuedDialogue.Count > 0 && dialogueFinished) {
+            StartCoroutine(dialogueBox.GetComponent<DialogueBox>().Display(queuedDialogue[0].GetDialogue(), queuedDialogue[0].delay));
+            queuedDialogue.RemoveAt(0);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Student") {
-            StartCoroutine(dialogueBox.GetComponent<DialogueBox>().Display(other.GetComponent<Student>().GetDialogue(), 5f));
+            Student student = other.GetComponent<Student>();
+            if (dialogueFinished) {
+                StartCoroutine(dialogueBox.GetComponent<DialogueBox>().Display(student.GetDialogue(), student.delay));
+            }
+            else {
+                queuedDialogue.Add(student);
+            }
         }
     }
 
