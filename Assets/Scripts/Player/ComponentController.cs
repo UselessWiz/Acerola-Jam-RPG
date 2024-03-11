@@ -6,6 +6,7 @@ public class ComponentController : MonoBehaviour
 {
 	[SerializeField] private LSDCamera cameraScript;
 	[SerializeField] private LSDHair hair;
+    [SerializeField] private GameObject badEndFadeout;
 	// WORK OUT WHERE THE HELL AUDIO IS SUPPOSED TO GO
 
 	public void ChangeStage(GameStage stage) 
@@ -22,6 +23,9 @@ public class ComponentController : MonoBehaviour
             	cameraScript.enabled = true;
             	break;// Enable weird camera plus sounds
             //case GameStage.GS_SCHOOL2: ;// Enable weird music
+            case GameStage.GS_BADEND:
+                badEndFadeout.SetActive(true);
+                break;
             default:
             	break;
         }
