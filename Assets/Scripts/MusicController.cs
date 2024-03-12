@@ -15,6 +15,10 @@ public class MusicController : MonoBehaviour
     {
         if (currentStage != saveData.stage) {
             currentStage = saveData.stage;
+            if (currentStage == GameStage.GS_BADEND) {
+                audioSource.Pause();
+                return;
+            }
             audioSource.clip = tracks[(int)currentStage];
             audioSource.Play();
         }

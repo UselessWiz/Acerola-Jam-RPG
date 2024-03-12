@@ -18,8 +18,10 @@ public class MovementController : MonoBehaviour
     [SerializeField] private SaveData saveData;
 
     [SerializeField] private Animator animator;
+    [SerializeField] private Rigidbody2D rb;
 
     public Vector2 direction;
+    [SerializeField] private Vector2 collidedDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +35,11 @@ public class MovementController : MonoBehaviour
     {
         // Movement
         float angle = 0;
+        Vector3 oldPosition = transform.position;
 
         if (stopped) {
             direction = Vector2.zero;
+            collidedDirection = Vector2.zero;
             if (Time.time > stoppedFinished) stopped = false;
         }
         else {
@@ -48,9 +52,16 @@ public class MovementController : MonoBehaviour
             angle = oldAngle;
         }
         else {
-            transform.Translate(Vector2.ClampMagnitude(direction, 1f) * speed * Time.deltaTime);
+            //Debug.Log(collidedDirection);
+            //if (collidedDirection.x == 1 && direction.x > 0 || collidedDirection.x == -1 && direction.x < 0) direction.x = 0;
+            //else if (collidedDirection.y == 1 && direction.y > 0 || collidedDirection.y == -1 && direction.y < 0) direction.y = 0;
+            //else if ((direction.normalized.x == -collidedDirection.x) || (direction.normalized.y == -collidedDirection.y)) collidedDirection = Vector2.zero;
 
-            direction = direction.normalized;
+            rb.MovePosition(transform.position + (Vector3)Vector2.ClampMagnitude(direction, 1f) * speed * Time.deltaTime);
+
+            //if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(LayerMask.NameToLayer("Wall"))) transform.position = oldPosition;
+
+            direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
             if (stopped) {
                 angle = 270;
@@ -76,6 +87,12 @@ public class MovementController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        //if (other.tag == "Wall") {
+        //    Debug.Log("detection happened");
+        //    collidedDirection = direction; // Direction to wall
+        //    transform.Translate(-direction * 2.5f * speed * Time.deltaTime);
+        //}
+
         if (other.tag == "Student") {
             Debug.Log("student contacted");
             Student student = other.GetComponent<Student>();
