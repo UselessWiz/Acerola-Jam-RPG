@@ -76,6 +76,8 @@ public class MovementController : MonoBehaviour
                 else if (angle >= 225 && angle <= 335) animator.Play("Front");
                 else animator.Play("Right");
             }
+
+            if ( Input.GetButton("Exit")) Application.Quit();
         }
 
         // Dialogue

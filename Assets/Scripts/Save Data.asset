@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b721b76a31810854ba5fe82749f76442, type: 3}
   m_Name: Save Data
   m_EditorClassIdentifier: 
-  clockHours: 12
+  clockHours: 24
   clockMinutes: 0
-  stage: 0
+  stage: 5

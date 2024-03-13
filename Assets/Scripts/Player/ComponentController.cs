@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class ComponentController : MonoBehaviour 
 {
-	[SerializeField] private LSDCamera cameraScript;
-	[SerializeField] private LSDHair hair;
+    [SerializeField] private GameObject school2bg;
     [SerializeField] private GameObject badEndFadeout;
-	// WORK OUT WHERE THE HELL AUDIO IS SUPPOSED TO GO
 
 	public void ChangeStage(GameStage stage) 
     {
         // Disable weird components
-        cameraScript.enabled = false;
-        hair.enabled = false;
+        school2bg.SetActive(false);
 
         switch (stage) {
             case GameStage.GS_CASTLE: 
@@ -22,7 +19,9 @@ public class ComponentController : MonoBehaviour
             case GameStage.GS_GRASSFIELD: 
             	//cameraScript.enabled = true;
             	break;// Enable weird camera plus sounds
-            //case GameStage.GS_SCHOOL2: ;// Enable weird music
+            case GameStage.GS_SCHOOL2: 
+                school2bg.SetActive(true);
+                break;
             case GameStage.GS_BADEND:
                 badEndFadeout.SetActive(true);
                 break;

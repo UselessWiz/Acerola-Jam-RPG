@@ -11,7 +11,6 @@ public enum GameStage {
 	GS_BADEND
 }
 
-[CreateAssetMenu]
 public class SaveData : ScriptableObject {
 	public int clockHours = 9;
 	public int clockMinutes = 0;
@@ -27,9 +26,8 @@ public class SaveData : ScriptableObject {
 			clockHours += 1;
 		}
 
-		if (clockHours == 24) {
-			stage = GameStage.GS_BADEND;
-			Debug.Log("GAME OVER BAD ENDING");
+		if (clockHours == 24 && stage != GameStage.GS_GOODEND) {
+			ChangeStage(GameStage.GS_BADEND);
 		}
 	}
 
