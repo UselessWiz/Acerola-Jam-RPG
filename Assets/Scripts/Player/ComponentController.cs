@@ -17,10 +17,10 @@ public class ComponentController : MonoBehaviour
 
         switch (stage) {
             case GameStage.GS_CASTLE: 
-            	hair.enabled = true;// Enable funky hair
+            	//hair.enabled = true;// Enable funky hair
             	break;
             case GameStage.GS_GRASSFIELD: 
-            	cameraScript.enabled = true;
+            	//cameraScript.enabled = true;
             	break;// Enable weird camera plus sounds
             //case GameStage.GS_SCHOOL2: ;// Enable weird music
             case GameStage.GS_BADEND:

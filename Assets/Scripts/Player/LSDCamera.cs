@@ -5,11 +5,9 @@ using UnityEngine;
 public class LSDCamera : MonoBehaviour 
 {
 	[SerializeField] private GameObject player;
-	[SerializeField] private float lerpValue = 0;
-	[SerializeField] private float sign = 1;
 
 	void Update()
 	{
-		
+		transform.position = player.transform.position + new Vector3(0, Mathf.Sin(2 * Time.time), 0);
 	}
 }

@@ -11,19 +11,19 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Canvas canvas;
 
-    public IEnumerator Display(string text, float delay, Vector2 location = new Vector2(), float timeBetweenLetters = 0.05f)
+    public IEnumerator Display(string text, float delay, float timeBetweenLetters = 0.05f)
     {
         Debug.Log("display workd");
         playerScript.dialogueFinished = false;
 
-        if (location == default(Vector2)) {
-            transform.position = new Vector2(100, 50);
-        }
-        else {
-            transform.position = location;
-        }
+        //if (location == default(Vector2)) {
+        //    transform.position = new Vector2(100, 50);
+        //}
+        //else {
+        //    transform.position = location;
+        //}
 
-        transform.position = transform.position + canvas.transform.position;
+        //transform.position = transform.position + canvas.transform.position;
 
         backgroundImage.enabled = true;
 
