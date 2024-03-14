@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Student7
   m_EditorClassIdentifier: 
   dialogueLines:
-  - Weird things sometimes happen around here... Maybe this place is haunted?
+  - Weird things happen here... Maybe this place is haunted?
   currentDialogueIndex: 0
   relevantNPC: {fileID: 0}

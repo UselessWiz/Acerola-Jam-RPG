@@ -33,6 +33,8 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetAxis("Exit") > 0f) Application.Quit();
+
         // Movement
         float angle = 0;
         Vector3 oldPosition = transform.position;
@@ -76,8 +78,6 @@ public class MovementController : MonoBehaviour
                 else if (angle >= 225 && angle <= 335) animator.Play("Front");
                 else animator.Play("Right");
             }
-
-            if ( Input.GetButton("Exit")) Application.Quit();
         }
 
         // Dialogue

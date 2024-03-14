@@ -19,6 +19,10 @@ public class MusicController : MonoBehaviour
                 audioSource.Pause();
                 return;
             }
+            else if (currentStage == GameStage.GS_GOODEND) {
+                audioSource.loop = false;
+            }
+            
             audioSource.clip = tracks[(int)currentStage];
             audioSource.Play();
         }

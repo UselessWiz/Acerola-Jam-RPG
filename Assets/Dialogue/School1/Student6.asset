@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Student6
   m_EditorClassIdentifier: 
   dialogueLines:
-  - I wonder if there's anything in these drawers? They're locked.
+  - I wonder if there's anything in these drawers?
   currentDialogueIndex: 0
   relevantNPC: {fileID: 0}
